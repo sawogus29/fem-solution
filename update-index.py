@@ -8,7 +8,7 @@ def read_template():
 
 def construct_body(dirs, domain="sawogus29.github.io", path="fem-solution"):
     def build_link(x):
-        href = f'{domain}/{path}/{x}'
+        href = f'{x}'
         return f'<a href="{href}">{x}</a>'
     
     return "\n".join(map(build_link, dirs))
