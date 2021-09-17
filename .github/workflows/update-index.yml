@@ -33,7 +33,7 @@ jobs:
       - name: Push to the repo
         run: |
           git config --global user.email "index-bot@example.com"
-          git config --global user.nmae "index-bot"
+          git config --global user.name "index-bot"
           git add .
           git commit -m "update index.html"
           git push
