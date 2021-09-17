@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+  --radius: 0.4rem;
+}
+
+body {
+  font-size: 16px;
+  /* - Weights: 400, 500, 600, 700 */
+  background-image: url("images/bg-intro-mobile.png");
+  background-color: var(--red);
+  text-align: center;
+  padding: 0.5em;
+}
+
+.heading {
+  color: white;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.heading__title {
+  width: 15ch;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.cta,
+.form {
+  box-shadow: 0em 0.5em 0em 0em rgba(0, 0, 0, 0.15);
+}
+
+.cta {
+  color: white;
+  background-color: var(--blue);
+  border-radius: var(--radius);
+  padding: 1em 2em;
+  margin-bottom: 1.5em;
+}
+
+.cta__strong {
+  font-weight: 600;
+}
+
+.form {
+  background-color: white;
+  padding: 1em;
+  border-radius: var(--radius);
+}
+
+.form__field,
+.form__submit {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 1.5em 1.5em;
+}
+
+.form__field {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.3em;
+  font-weight: 700;
+}
+
+.form__field:active,
+.form__field:focus {
+  outline: none;
+  border: 1px solid var(--dark-blue);
+}
+
+.form__field::placeholder {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.form__submit {
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background-color: var(--green);
+  border: none;
+  border-radius: 0.3em;
+}
+
+.form__desc {
+  padding-inline: 4em;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form__desc__tns {
+  text-decoration: none;
+  color: var(--red);
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+    align-items: center;
+  }
+
+  .heading {
+    text-align: left;
+  }
+
+  .heading__title {
+    margin-left: 0;
+  }
+}

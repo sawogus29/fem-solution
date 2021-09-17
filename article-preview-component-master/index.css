@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: hsl(217, 19%, 35%);
+  --second-primary: hsl(214, 17%, 51%);
+  --third-primary: hsl(212, 23%, 69%);
+  --background: hsl(210, 46%, 95%);
+}
+
+body {
+  font-size: 13px;
+  font-family: "Manrope", sans-serif;
+  /* - Weights: 500, 700 */
+  background-color: var(--background);
+}
+
+.card {
+  background-color: white;
+  border-radius: 1em;
+  overflow: hidden;
+  margin: 2em;
+  /* max-width: 80ch; */
+}
+
+.card__image-container {
+  /* padding-right: 1px; */
+  padding-bottom: 60%;
+
+  background-image: url("images/drawers.jpg");
+  background-size: cover;
+  margin-bottom: 3em;
+}
+
+.card::before {
+  content: "";
+  display: block;
+  padding-bottom: 60%;
+
+  background-image: url("images/drawers.jpg");
+  background-size: cover;
+  margin-bottom: 3em;
+}
+
+.card__content {
+  padding-inline: 3em;
+  padding-bottom: 2em;
+}
+
+.card__desc {
+  color: var(--third-primary);
+  margin-bottom: 3em;
+}
+
+.card__profile {
+  display: flex;
+  align-items: center;
+}
+
+/* .card__profile::before {
+  content: "";
+  background-image: url("images/avatar-michelle.jpg");
+  padding-right: 3em;
+  padding-bottom: 3em;
+  border-radius: 10em;
+  background-size: cover;
+  margin-right: 1em;
+} */
+
+.card__profile__photo {
+  width: 3em;
+  height: 3em;
+  border-radius: 10em;
+  margin-right: 1em;
+}
+
+.card__profile__name {
+  font-weight: 700;
+}
+
+.card__profile__date {
+  color: var(--third-primary);
+}
+
+.card__profile__chk {
+  display: none;
+}
+
+.card__profile__share {
+  position: relative;
+  margin-left: auto;
+  background-color: var(--background);
+  background-image: url("images/icon-share.svg");
+  padding-right: 3em;
+  padding-right: 3em;
+  padding-bottom: 3em;
+  border-radius: 10em;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  --up: 5em;
+}
+
+.card__profile__chk:checked ~ .card__profile__share {
+  background-color: var(--third-primary);
+  background-blend-mode: color-dodge;
+}
+
+.card__share-menu {
+  display: none;
+  position: absolute;
+  background-color: var(--primary);
+  padding: 1em 3em;
+  --half: 7em;
+  /* top: calc(-1 * var(--up)); */
+  left: calc(-1 * var(--half));
+  width: calc(2 * var(--half) + 100%);
+  border-radius: 1em;
+  transform: translateY(calc(-1 * var(--up)));
+}
+
+.card__profile__chk:checked ~ .card__profile__share::before {
+  content: "";
+  position: absolute;
+  --width: 0.5em;
+  left: var(--width);
+  right: var(--width);
+  bottom: var(--width);
+  top: var(--width);
+  background-color: var(--primary);
+  transform: translateY(calc(-0.75 * var(--up))) rotate(45deg);
+}
+
+.card__profile__chk:checked ~ .card__profile__share > .card__share-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__share-menu__share {
+  color: var(--third-primary);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.card__share-menu__link img {
+  width: 1em;
+  height: 1em;
+}
+
+@media (min-width: 600px) {
+  .card {
+    display: flex;
+  }
+  .card__image-container {
+    padding-right: 40%;
+    /* 1px만 해도 자동으로 맞추네??? */
+    /* card:(flex)align-items: stretch 때문*/
+    padding-bottom: 1%;
+    /* ??????????????????????????? */
+    margin: unset;
+  }
+
+  .card::before {
+    padding-right: 40%;
+    /* 1px만 해도 자동으로 맞추네??? */
+    padding-bottom: 1%;
+    /* ??????????????????????????? */
+    margin: unset;
+  }
+}
