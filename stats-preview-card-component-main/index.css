@@ -1,0 +1,132 @@
+:root {
+  --bg-color: rgb(10, 12, 27);
+  --card-color: rgb(28, 25, 56);
+  --HIGHLIGHT-COLOR: 148, 91, 192;
+  --highlight-color: rgb(var(--HIGHLIGHT-COLOR));
+  --highlight-filter: rgba(var(--HIGHLIGHT-COLOR), 0.4);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-color);
+}
+
+.card {
+  color: white;
+  background-color: var(--card-color);
+  margin: 1em;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.card__image {
+  background-image: linear-gradient(
+      var(--highlight-filter),
+      var(--highlight-filter)
+    ),
+    url("./images/image-header-mobile.jpg");
+
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+
+  /* height: 10em; */
+  /* width: 100%; */
+  min-height: 10em;
+  padding-bottom: min(70%, 15em);
+}
+
+.card__content {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1em;
+}
+
+.card__title {
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+}
+
+.card__desc {
+  font-size: 0.7rem;
+  margin-bottom: 2em;
+}
+
+.card__stat {
+  margin-bottom: 1.2em;
+}
+
+.card__stat__number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.card__desc,
+.card__stat__unit {
+  font-size: 0.7rem;
+  opacity: 0.5;
+}
+
+.card__stat__unit {
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: var(--highlight-color);
+}
+
+@media (min-width: 600px) {
+  .card * {
+    margin: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 5em;
+  }
+
+  .card__image {
+    min-width: 50%;
+    min-height: unset;
+    padding-bottom: unset;
+  }
+
+  .card__content {
+    padding: 3em 5em 3em 3em;
+  }
+
+  .card__stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .card__title,
+  .card__desc {
+    text-align: initial;
+  }
+
+  .card__title {
+    margin-right: -1.5em;
+    margin-bottom: 1em;
+  }
+
+  .card__desc {
+    margin-bottom: 4em;
+  }
+
+  .card__stat {
+    margin: inherit;
+  }
+}
