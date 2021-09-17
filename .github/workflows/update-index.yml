@@ -34,4 +34,6 @@ jobs:
         run: |
           git config --global user.email "index-bot@example.com"
           git config --global user.nmae "index-bot"
+          git add .
+          git commit -m "update index.html"
           git push
